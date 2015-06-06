@@ -1,0 +1,22 @@
+{
+  "name": "cia",
+  "description": "Crime Investigation using Aadhaar",
+  "keywords": ["investigation", "aadhaar", "crime"],
+  "require": {
+    "torophp/torophp": "dev-master",
+    "twig/twig": "1.*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "4.4.*"
+  },
+  "autoload": {
+    "classmap": [
+      "app/controllers",
+      "app/models"
+    ]
+  },
+  "config": {
+    "preferred-install": "dist"
+  },
+  "minimum-stability": "stable"
+}
