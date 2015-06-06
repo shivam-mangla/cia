@@ -1,0 +1,1 @@
+ALTER TABLE `police_stations` ADD UNIQUE(`stationname`);
