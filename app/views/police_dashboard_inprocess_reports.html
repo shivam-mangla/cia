@@ -29,10 +29,10 @@
     </div>
     <div class="content">
       {{ message }}<br><br>
-      <a href="/police/reports/open">{{ open_report_count }}</a> reports require attention<br><br>
+      <a href="/police/reports/in_process">{{ inprocess_report_count }}</a> reports are in process<br><br>
       Report ID
-      {% for report_id in open_reports %}
-        {{ report_id }}&nbsp;&nbsp;&nbsp;<a href="/police/reports/{{ report_id }}/process">Process</a><br>
+      {% for report_id in inprocess_reports %}
+        {{ report_id }}<br>
       {% endfor %}
     </div>
 {% endblock %}

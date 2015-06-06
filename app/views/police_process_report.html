@@ -22,17 +22,19 @@
     <div class="sidebar">
       <ul>
         <li>Home</li>
-        <li><b>Requests</b></li>
-        <li>Ongoing</li>
+        <li>Requests</li>
+        <li><b>Ongoing</b></li>
         <li>Closed</li>
       </ul>
     </div>
     <div class="content">
-      {{ message }}<br><br>
-      <a href="/police/reports/open">{{ open_report_count }}</a> reports require attention<br><br>
-      Report ID
-      {% for report_id in open_reports %}
-        {{ report_id }}&nbsp;&nbsp;&nbsp;<a href="/police/reports/{{ report_id }}/process">Process</a><br>
+      Report Number {{ report_id }}
+      <h3><a href="/police/reports/{{ report_id }}/addrecord">+</a></h3>
+      {% if records is empty %}
+        No information in report right now
+      {% endif %}
+      {% for record in records %}
+        {{ record }}<br>
       {% endfor %}
     </div>
 {% endblock %}
