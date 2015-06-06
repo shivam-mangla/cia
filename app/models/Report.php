@@ -18,25 +18,25 @@ class Report extends Base
     self::UPDATED_AT => 'integer'
     );
 
-  public static function countOpenFor($member)
+  public static function countWithStatusFor($status, $member)
   {
     $query = "SELECT count(*) FROM `reports`
               WHERE `id` IN
               ( SELECT `report_id` FROM `report_police_member_map`
                 WHERE `member_id` = {$member->id})
-              AND `status` = 'open'";
+              AND `status` = '{$status}'";
 
-    $open_report_count = 0;
+    $report_count = 0;
 
     if($statement = self::$db->prepare($query))
     {
       $statement->execute();
-      $statement->bind_result($open_report_count);
+      $statement->bind_result($report_count);
       $statement->store_result();
       $statement->fetch();
       $statement->close();
 
-      return $open_report_count;
+      return $report_count;
     }
 
   }

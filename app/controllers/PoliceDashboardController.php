@@ -22,8 +22,8 @@ class PoliceDashboardController
 			header('Location: /police/login?error_msg=login_required');
 		}
 
-		$open_report_count = Report::countOpenFor($p_member);
-		// $inprocess_report_count = Report::countInprocessFor($p_member);
+		$open_report_count = Report::countWithStatusFor("open", $p_member);
+		$inprocess_report_count = Report::countWithStatusFor("in_process", $p_member);
 
 		$p_station = PoliceStation::find(1);
 		$message = "Welcome to " . $p_station->name . ", Mr. " . $p_member->first_name;
@@ -31,7 +31,8 @@ class PoliceDashboardController
 		// TODO: check member type and render accordingly
     echo $twig->render("police_officer_dashboard.html", array(
     	"message" => $message,
-    	"open_report_count" => $open_report_count
+    	"open_report_count" => $open_report_count,
+    	"inprocess_report_count" => $inprocess_report_count
     	));
 	}
 
