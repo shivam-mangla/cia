@@ -1,0 +1,5 @@
+# Config files
+config/config.cfg
+
+# vendor files
+/vendor
