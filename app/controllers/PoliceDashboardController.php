@@ -16,6 +16,11 @@ class PoliceDashboardController
 
 		$p_member = PoliceMember::findByUsername($username);
 
+		if(NULL === $p_member)
+		{
+			header('Location: /police/login?error_msg=login_required');
+		}
+
 		$p_station = PoliceStation::find(1);
 		$message = "Welcome to " . $p_station->name . ", Mr. " . $p_member->first_name;
 
