@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Login | Police{% endblock %}
+{% block head %}
+    {{ parent() }}
+{% endblock %}
+
+{% block content %}
+    <form action="/police/login" method="POST">
+      <h2>Login</h2>
+      Username <input type="text" name="username" id="username" placeholder="ashrivastava"><br><br>
+      Password <input type="password" name="passwd" id="passwd" placeholder="********">
+      <input type="submit" value="Login">
+    </form>
+{% endblock %}
