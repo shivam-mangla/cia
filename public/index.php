@@ -8,5 +8,7 @@
 
   Toro::serve(array(
       "/police/login" => "PoliceLoginController",
+      "/citizen/login" => "PoliceLoginController",
+      "/citizen/status_fcir" => "ForwardedCIRStatusController",
       "/police/dashboard" => "PoliceDashboardController"
     ));

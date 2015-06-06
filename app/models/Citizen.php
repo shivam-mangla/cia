@@ -28,4 +28,26 @@ class Citizen extends Base
     return $instance->findWhere(array('username' => $citizenName));
   }
 
+  public static function findByCitizenId($forwardedCIRId)
+  {
+
+    $query = "SELECT username FROM `citizens`
+              WHERE `c_id` =
+              ( SELECT `c_id_rcvr` FROM `report_police_member_map`
+                WHERE `cf_id` = {$forwardedCIRId} )";
+
+    $name = '';
+
+    if($statement = self::$db->prepare($query))
+    {
+      $statement->execute();
+      $statement->bind_result($name);
+      $statement->store_result();
+      $statement->fetch();
+      $statement->close();
+
+      return $name;
+    }
+  }
+
 }
