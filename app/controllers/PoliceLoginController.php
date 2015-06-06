@@ -1,11 +1,15 @@
 <?php
 
+use Models\PoliceMember;
+
 class PoliceLoginController
 {
 
 	function get()
 	{
-		echo "Welcome to Police Login";
+		$p_member = PoliceMember::findByUsername('kandoiabhi');
+
+		echo "Welcome to Police Station " . $p_member->first_name;
 	}
 
 }
