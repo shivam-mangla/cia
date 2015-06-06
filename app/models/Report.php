@@ -41,4 +41,34 @@ class Report extends Base
 
   }
 
+  public static function findWithStatusFor($status, $member_id)
+  {
+    $query = "SELECT `id` FROM `reports`
+              WHERE `id` IN
+              ( SELECT `report_id` FROM `report_police_member_map`
+                WHERE `member_id` = {$member_id})
+              AND `status` = '{$status}'";
+
+    $report_id = NULL;
+
+    $report_ids = array();
+
+    if($statement = self::$db->prepare($query))
+    {
+      $statement->execute();
+      $statement->bind_result($report_id);
+      $statement->store_result();
+
+      while($statement->fetch())
+      {
+        $report_ids[] = $report_id;
+      }
+
+      $statement->fetch();
+      $statement->close();
+
+      return $report_ids;
+    }
+  }
+
 }

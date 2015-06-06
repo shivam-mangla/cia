@@ -5,7 +5,9 @@
     {{ parent() }}
     <style>
       .sidebar {
+        display: inline;
         width: 30%;
+        height: 100%;
         background-color: #888;
       }
 
@@ -19,8 +21,8 @@
 {% block content %}
     <div class="sidebar">
       <ul>
-        <li><b>Home</b></li>
-        <li>Requests</li>
+        <li>Home</li>
+        <li><b>Requests</b></li>
         <li>Ongoing</li>
         <li>Closed</li>
       </ul>
@@ -28,6 +30,9 @@
     <div class="content">
       {{ message }}<br><br>
       <a href="/police/reports/open">{{ open_report_count }}</a> reports require attention<br><br>
-      <a href="/police/reports/in_process">{{ inprocess_report_count }}</a> reports are in process
+      Report ID
+      {% for report_id in open_reports %}
+        {{ report_id }}<br>
+      {% endfor %}
     </div>
 {% endblock %}
