@@ -100,15 +100,15 @@ class Base
 
   public static function getDB()
   {
-    global $backdoor_config;
+    global $APP_CONFIG;
 
     if( ! self::$db)
     {
       self::$db = new DatabaseConnection(
-        $backdoor_config["db_host"],
-        $backdoor_config["db_user"],
-        $backdoor_config["db_pass"],
-        $backdoor_config["db_name"],
+        $APP_CONFIG["db_host"],
+        $APP_CONFIG["db_user"],
+        $APP_CONFIG["db_pass"],
+        $APP_CONFIG["db_name"],
         true
       );
     }
