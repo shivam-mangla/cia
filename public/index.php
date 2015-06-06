@@ -7,5 +7,6 @@
   });
 
   Toro::serve(array(
-      "/police/login" => "PoliceLoginController"
+      "/police/login" => "PoliceLoginController",
+      "/police/dashboard" => "PoliceDashboardController"
     ));
