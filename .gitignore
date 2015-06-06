@@ -3,3 +3,6 @@ config/config.cfg
 
 # vendor files
 /vendor
+
+# Others
+composer.lock
