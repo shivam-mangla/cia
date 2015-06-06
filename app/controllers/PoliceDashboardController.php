@@ -24,6 +24,7 @@ class PoliceDashboardController
 
 		$open_report_count = Report::countWithStatusFor("open", $p_member);
 		$inprocess_report_count = Report::countWithStatusFor("in_process", $p_member);
+    $inreview_report_count = Report::countWithStatusFor("in_review", $p_member);
 
 		$p_station = PoliceStation::find(1);
 		$message = "Welcome to " . $p_station->name . ", Mr. " . $p_member->first_name;
@@ -32,7 +33,8 @@ class PoliceDashboardController
     echo $twig->render("police_officer_dashboard.html", array(
     	"message" => $message,
     	"open_report_count" => $open_report_count,
-    	"inprocess_report_count" => $inprocess_report_count
+    	"inprocess_report_count" => $inprocess_report_count,
+      "inreview_report_count" => $inreview_report_count
     	));
 	}
 

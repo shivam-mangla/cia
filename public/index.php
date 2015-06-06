@@ -11,5 +11,6 @@
       "/police/dashboard" => "PoliceDashboardController",
       "/police/reports/open" => "PoliceOpenReportsController",
       "/police/reports/in_process" => "PoliceInprocessReportsController",
-      "/police/reports/:number/process" => "PoliceProcessReportController"
+      "/police/reports/:number/process" => "PoliceProcessReportController",
+      "/police/reports/:number/send_for_review" => "PoliceReportForReviewController"
     ));

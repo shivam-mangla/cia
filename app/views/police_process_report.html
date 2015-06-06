@@ -36,5 +36,8 @@
       {% for record in records %}
         {{ record }}<br>
       {% endfor %}
+      <div>
+        <a href="/police/reports/{{ report_id }}/send_for_review"><button>Mark complete</button></a>
+      </div>
     </div>
 {% endblock %}
