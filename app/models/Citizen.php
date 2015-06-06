@@ -15,17 +15,17 @@ class Citizen extends Base
     'c_id' => 'integer',
     'username' => 'string',
     'passwd' => 'string',
-    'role'  => 'string', 
+    'role'  => 'string',
     'org_name' => 'string',
     self::CREATED_AT => 'integer',
     self::UPDATED_AT => 'integer'
     );
 
-  public static function findByCitizenname($citizenName)
+  public static function findByUsername($username)
   {
     $instance = new static;
 
-    return $instance->findWhere(array('username' => $citizenName));
+    return $instance->findWhere(array('username' => $username));
   }
 
   public static function findByCitizenId($forwardedCIRId)

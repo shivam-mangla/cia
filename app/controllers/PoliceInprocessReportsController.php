@@ -4,7 +4,7 @@ use Models\PoliceMember;
 use Models\PoliceStation;
 use Models\Report;
 
-class PoliceDashboardController
+class PoliceInprocessReportsController
 {
 
 	function get()
@@ -22,19 +22,13 @@ class PoliceDashboardController
 			header('Location: /police/login?error_msg=login_required');
 		}
 
-		$open_report_count = Report::countWithStatusFor("open", $p_member);
 		$inprocess_report_count = Report::countWithStatusFor("in_process", $p_member);
-    $inreview_report_count = Report::countWithStatusFor("in_review", $p_member);
-
-		$p_station = PoliceStation::find(1);
-		$message = "Welcome to " . $p_station->name . ", Mr. " . $p_member->first_name;
+		$inprocess_reports = Report::findWithStatusFor("in_process", $p_member->id);
 
 		// TODO: check member type and render accordingly
-    echo $twig->render("police_officer_dashboard.html", array(
-    	"message" => $message,
-    	"open_report_count" => $open_report_count,
+    echo $twig->render("police_dashboard_inprocess_reports.html", array(
     	"inprocess_report_count" => $inprocess_report_count,
-      "inreview_report_count" => $inreview_report_count
+    	"inprocess_reports" => $inprocess_reports
     	));
 	}
 

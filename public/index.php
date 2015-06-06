@@ -8,7 +8,12 @@
 
   Toro::serve(array(
       "/police/login" => "PoliceLoginController",
-      "/citizen/login" => "PoliceLoginController",
-      "/citizen/status_fcir" => "ForwardedCIRStatusController",
       "/police/dashboard" => "PoliceDashboardController"
+      "/police/dashboard" => "PoliceDashboardController",
+      "/police/reports/open" => "PoliceOpenReportsController",
+      "/police/reports/in_process" => "PoliceInprocessReportsController",
+      "/police/reports/:number/process" => "PoliceProcessReportController",
+      "/police/reports/:number/send_for_review" => "PoliceReportForReviewController",
+      "/citizen/login" => "PoliceLoginController",
+      "/citizen/status_fcir" => "ForwardedCIRStatusController"
     ));
