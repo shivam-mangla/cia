@@ -18,4 +18,6 @@ CIA: Crime Investigation using Aadhaar
 
 6) Append *127.0.0.1  cia.local* to the file `/etc/hosts`
 
-7) Open `http://cia.local/police/login` on your browser
+7) Use the database schema at `schema/cia.sql` to create the database
+
+8) Open `http://cia.local/police/login` on your browser
