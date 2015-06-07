@@ -31,7 +31,7 @@
       <a href="/police/requests">{{ reports_requests_count }}</a>  new requests<br><br>
       Report ID
       {% for report_id in reports_requests %}
-        {{ report_id }}&nbsp;&nbsp;&nbsp;<a href="/police/reports/{{ report_id }}">Assign</a><br>
+        {{ report_id }}&nbsp;&nbsp;&nbsp;<a href="/police/requests/{{ report_id }}">Assign</a><br>
       {% endfor %}
     </div>
 {% endblock %}
