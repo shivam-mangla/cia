@@ -15,20 +15,26 @@ class CitizenSignUpController
 	function post()
 	{
 
-		//TODO: Write that data into db
+		//TODO: Validate input data
+		// Add input data to database
+		Citizen::insert($_POST);
 
 
 		// Aadhaar authentication
 		$query = array(
+			'aadhaar-id' => $_POST['aadhaar_no'],
+			'modality' => 'demo',
+			"certificate-type" => "preprod",
 			'demographics' => array(
 				'name' => array(
-					'name-value' => $_POST('name')
+					"matching-strategy"=> "exact",
+					'name-value' => $_POST['name']
 				),
 				'dob' => array(
-					'dob-value' => $_POST('dob')
+					'dob-value' => $_POST['dob']
 				),
-				'email' => $_POST('email'),
-				'phone' => $_POST('phone')
+				'email' => $_POST['email'],
+				'phone' => $_POST['phone']
 			)
 			);
 
