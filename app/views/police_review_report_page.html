@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard | Police{% endblock %}
+{% block head %}
+    {{ parent() }}
+    <style>
+      .sidebar {
+        display: inline;
+        width: 30%;
+        height: 100%;
+        background-color: #888;
+      }
+
+      li {
+        list-style: none;
+        display: inline-block;
+      }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div class="sidebar">
+      <ul>
+        <li>Home</li>
+        <li>Requests</li>
+        <li><b>Review</b></li>
+        <li>Closed</li>
+      </ul>
+    </div>
+    <div class="content">
+      Report Number {{ report_id }}<br><br>
+      on <a href="#">{{ aadhaar_no }}</a><br><br>
+      {% if records is empty %}
+        No information in report. Report is clean.
+      {% endif %}
+      {% for record in records %}
+        {{ record }}<br>
+      {% endfor %}
+      <div>
+        <a href="/police/reports/{{ report_id }}/mark_verified"><button>Mark Verified</button></a>
+      </div>
+    </div>
+{% endblock %}
