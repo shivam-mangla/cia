@@ -7,14 +7,15 @@
 
 {% block content %}
     <form action="/citizen/signup" method="POST">
-      <h2>Sign up</h2>
-      Aadhaar no <input type="text" name="aadhaar_no" id="aadhaar_no" placeholder="121212121212"><br><br>
-      Username <input type="text" name="username" id="username" placeholder="foo"><br><br>
-      Password <input type="password" name="passwd" id="passwd" placeholder="*******"><br><br>
-      Name <input type="text" name="name" id="name" placeholder="Foo Bar"><br><br>
-      Date of Birth <input type="date" name="dob" id="dob" placeholder="00/00/1900"><br><br>
-      Email <input type="text" name="email" id="email" placeholder="foo@bar.com"><br><br>
-      Phone Number <input type="text" name="phone" id="phone" placeholder="0000000000"><br><br>
+      <center><h2>Sign up</h2>
+      <input type="text" name="aadhaar_no" id="aadhaar_no" placeholder="Aadhaar no (12 digit)"><br><br>
+      <input type="text" name="username" id="username" placeholder="Username"><br><br>
+      <input type="password" name="passwd" id="passwd" placeholder="*******"><br><br>
+      <input type="text" name="name" id="name" placeholder="Full Name"><br><br>
+      <input type="date" name="dob" id="dob" placeholder="07/02/1990"><br><br>
+      <input type="text" name="email" id="email" placeholder="email: foo@bar.com"><br><br>
+      <input type="text" name="phone" id="phone" placeholder="Phone no: 9999999999"><br><br>
       <input type="submit" value="Sign Up">
+      </center>
     </form>
 {% endblock %}
