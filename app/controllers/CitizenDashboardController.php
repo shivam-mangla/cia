@@ -23,30 +23,13 @@ class CitizenDashboardController
 			header('Location: /citizen/login?error_msg=login_required');
 		}
 
-    // TODO: check member type and render accordingly
-
-    echo "Welcome to your dash {$username}<br>";
-
     if($citizen->role == "employee")
     {
-      echo "<a href=\"/citizen/status_fcir\">Status of forwarded reports</a>";
-
-      /*echo $twig->render("police_commissioner_dashboard.html", array(
-        "message" => $message,
-        "open_report_count" => $open_report_count,
-        "review_report_count" => $review_report_count
-        ));*/
+      echo $twig->render("employee_dashboard.html", array("username" => $username));
     }
     else if($citizen->role == "employer")
     {
-  		echo "You are an employer!";
-
-      /*echo $twig->render("police_officer_dashboard.html", array(
-        "message" => $message,
-        "open_report_count" => $open_report_count,
-        "inprocess_report_count" => $inprocess_report_count,
-        "inreview_report_count" => $inreview_report_count
-        ));*/
+  		echo $twig->render("employer_dashboard.html", array("username" => $username));
     }
   }
 
