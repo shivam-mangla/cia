@@ -60,4 +60,4 @@ id, report_id, citizen_id, timestamps
 citizen
 =========
 
-id, aadhar_info, username, passwd, role, organization_name, timestamps
+id, aadhar_no, username, name, dob, email, phone, passwd, role, orga_name, timestamps
