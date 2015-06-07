@@ -70,4 +70,35 @@ class Report extends Base
     }
   }
 
+  public static function findRequestsForStation($station_id)
+  {
+    $query = "SELECT `id` FROM `reports`
+              WHERE `station_id` = {$station_id}
+              AND `id` NOT IN
+              (SELECT `report_id` FROM `report_police_member_map`
+                WHERE `member_id` IN
+                (SELECT `member_id` FROM `police_station_and_member_map`
+                  WHERE `station_id` = {$station_id}))";
+
+    $report_id = NULL;
+
+    $report_ids = array();
+
+    if($statement = self::$db->prepare($query))
+    {
+      $statement->execute();
+      $statement->bind_result($report_id);
+      $statement->store_result();
+
+      while($statement->fetch())
+      {
+        $report_ids[] = $report_id;
+      }
+
+      $statement->close();
+
+      return $report_ids;
+    }
+  }
+
 }
