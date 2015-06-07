@@ -8,11 +8,12 @@ class Citizen extends Base
 {
   protected $table = 'citizens';
 
-  protected $fillable = array('username', 'passwd', 'role', 'org_name', 'created_at', 'updated_at');
+  protected $fillable = array('aadhaar_no', 'username', 'passwd', 'role', 'org_name', 'created_at', 'updated_at');
 
 
   protected $casts = array(
-    'c_id' => 'integer',
+    'id' => 'integer',
+    'aadhaar_no' => 'string',
     'username' => 'string',
     'passwd' => 'string',
     'role'  => 'string',
@@ -32,7 +33,7 @@ class Citizen extends Base
   {
 
     $query = "SELECT username FROM `citizens`
-              WHERE `c_id` =
+              WHERE `id` =
               ( SELECT `c_id_rcvr` FROM `report_police_member_map`
                 WHERE `cf_id` = {$forwardedCIRId} )";
 

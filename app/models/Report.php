@@ -18,6 +18,31 @@ class Report extends Base
     self::UPDATED_AT => 'integer'
     );
 
+  public static function getReportIdsFor($aadhaar_no)
+  {
+    $query = "SELECT `id` FROM `reports` WHERE `aadhaar_no` = {$aadhaar_no}";
+
+    $report_id = NULL;
+
+    $report_ids = array();
+
+    if($statement = self::$db->prepare($query))
+    {
+      $statement->execute();
+      $statement->bind_result($report_id);
+      $statement->store_result();
+
+      while($statement->fetch())
+      {
+        $report_ids[] = $report_id;
+      }
+
+      $statement->close();
+
+      return $report_ids;
+    }
+  }
+
   public static function countWithStatusFor($status, $member)
   {
     $query = "SELECT count(*) FROM `reports`

@@ -1,7 +1,7 @@
 <?php
 
-use Models\Citizens;
-use Models\CIR;
+use Models\Citizen;
+use Models\Report;
 use Models\ForwardedCIR;
 
 class ForwardedCIRStatusController
@@ -10,12 +10,12 @@ class ForwardedCIRStatusController
 	function get()
 	{
 		$loader = new \Twig_Loader_Filesystem(__DIR__ . '/../views');
-    	$twig = new \Twig_Environment($loader);
+    $twig = new \Twig_Environment($loader);
 
-	    // TODO: get the user from the login cookies
-	    $username = $_COOKIE["username"];
+    // TODO: get the user from the login cookies
+    // $username = $_COOKIE["username"];
 
-		$citizen = Citizen::findByUsername($username);
+		$citizen = Citizen::findByUsername("abhi");
 
 		if(NULL === $citizen)
 		{
@@ -23,19 +23,29 @@ class ForwardedCIRStatusController
 		}
 
 
-		$cir_id = CIR::getCIRId($citizen->id);
-		$statuses_of_forwarded_reports = ForwardedCIR::getStatuses($cir->id);
+		$cir_ids = Report::getReportIdsFor($citizen->aadhaar_no);
 
-		for $status in $statuses_of_forwarded_reports {
-			$statuses_of_forwarded_reports('employer_name') = $findByCitizenId($status(0));
+		$all_cir_status = array();
+
+		foreach($cir_ids as $cir_id)
+		{
+			$multiple_status = ForwardedCIR::getMultipleStatusFor($cir_id);
+
+			foreach($multiple_status as $status)
+			{
+				$receiver = Citizen::find($status["receiver_id"]);
+
+				$status["receiver"] = $receiver->username;
+				$all_cir_status[] = $status;
+			}
 		}
 
-		var_dump($statuses_of_forwarded_reports);
+		var_dump($all_cir_status);
 
 		// TODO: check status and show the relevant time stamp
-    echo $twig->render("forwarded_cir_status.html", array(
+    /*echo $twig->render("forwarded_cir_status.html", array(
     	"statuses" => $statuses_of_forwarded_reports
-    	));
+    	));*/
 	}
 
 }
