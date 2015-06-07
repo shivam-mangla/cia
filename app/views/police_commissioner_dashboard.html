@@ -5,6 +5,7 @@
     {{ parent() }}
     <style>
       .sidebar {
+        display: inline;
         width: 30%;
         background-color: #888;
       }
@@ -18,16 +19,23 @@
 
 {% block content %}
     <div class="sidebar">
-      <ul>
-        <li><b>Home</b></li>
-        <li>Requests</li>
-        <li>Review</li>
-        <li>Closed</li>
+      <ul class="nav nav-pills">
+        <li role="presentation" class="active"><a href="/police/dashboard">Home</a></li>
+        <li role="presentation"><a href="/police/requests">Requests</a></li>
+        <li role="presentation"><a href="/police/reports/review">Review</a></li>
+        <li role="presentation"><a href="#">Closed</a></li>
       </ul>
     </div>
     <div class="content">
-      {{ message }}<br><br>
-      <a href="/police/requests">{{ open_report_count }}</a> new requests<br><br>
-      <a href="/police/reports/review">{{ review_report_count }}</a> reports to be reviewed
+      <div class="stats 2-stats">
+        <div class="short_stat">
+          <div class="stat_quant"><a href="/police/requests">{{ open_report_count }}</a></div>
+          <div class="stat_desp">New Requests</div>
+        </div>
+        <div class="short_stat">
+          <div class="stat_quant"><a href="/police/reports/review">{{ review_report_count }}</a></div>
+          <div class="stat_desp">Awaiting Review</div>
+        </div>
+      </div>
     </div>
 {% endblock %}

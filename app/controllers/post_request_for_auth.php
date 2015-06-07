@@ -1,6 +1,7 @@
 <?php
 
-$xml = file_get_contents('post_xml.xml');
+// $xml = file_get_contents('post_xml.xml');
+$xml = file_get_contents('sample_request.xml');
 echo $xml;
 //var_dump($xml);
 $url = 'https://auth.uidai.gov.in/1.6/public/9/9/MLTbKYcsgYMq1zgL3WMZYrnyvsarlljxpom2A-QTPc0Zud23shpnqPk';

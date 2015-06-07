@@ -20,11 +20,11 @@
 
 {% block content %}
     <div class="sidebar">
-      <ul>
-        <li>Home</li>
-        <li><b>Requests</b></li>
-        <li>Review</li>
-        <li>Closed</li>
+      <ul class="nav nav-pills">
+        <li role="presentation"><a href="/police/dashboard">Home</a></li>
+        <li role="presentation" class="active"><a href="/police/requests">Requests</a></li>
+        <li role="presentation"><a href="/police/reports/review">Review</a></li>
+        <li role="presentation"><a href="#">Closed</a></li>
       </ul>
     </div>
     <div class="content">

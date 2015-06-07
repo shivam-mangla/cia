@@ -47,6 +47,7 @@ body .content a {
 }
 
 .stats {
+  margin: 20px 5px;
   width: 600px;
 }
 
@@ -59,11 +60,11 @@ body .content a {
 
 .short_stat .stat_quant a {
   color: #20ABFE;
-  font-size: 32px;
+  font-size: 40px;
 }
 
 .short_stat .stat_desp {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .footer {
@@ -90,7 +91,7 @@ body .content a {
   margin-right: 20px;
 }
 
-a {
+a, a:hover {
   text-decoration: none;
   color: #fff;
 }
