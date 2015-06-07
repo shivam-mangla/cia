@@ -1,15 +1,15 @@
-{% extends "base.html" %}
+{% extends "loginbase.html" %}
 
-{% block title %}Login | Police{% endblock %}
+{% block title %}Login | Citizen{% endblock %}
 {% block head %}
     {{ parent() }}
 {% endblock %}
 
 {% block content %}
     <form action="/police/login" method="POST">
-      <h2>Login</h2>
-      Username <input type="text" name="username" id="username" placeholder="ashrivastava"><br><br>
-      Password <input type="password" name="passwd" id="passwd" placeholder="********">
-      <input type="submit" value="Login">
+      <h2>Welcome Back</h2>
+      <input type="text" name="username" id="username" placeholder="Username">
+      <input type="password" name="passwd" id="passwd" placeholder="*******">
+      <input type="submit" class="signin" value="Sign in">
     </form>
 {% endblock %}

@@ -1,3 +1,11 @@
+@font-face {
+font-family: 'Myriad Pro Regular';
+font-style: normal;
+font-weight: normal;
+src: local('Myriad Pro Regular'), url('fonts/MYRIADPRO-REGULAR.woff') format('woff');
+}
+
+
 body {
   padding: 0px;
   margin: 0;
@@ -7,6 +15,8 @@ body {
 body .content {
   width: 600px;
   margin: 10px auto;
+  margin-top: 40px;
+  font-family: Myriad Pro Regular;
 }
 
 body .content a {
@@ -15,6 +25,7 @@ body .content a {
 }
 
 .header {
+  font-family: Myriad Pro Regular;
   margin: 0px;
   margin-bottom: 20px;
   background-color: #252525;
@@ -25,6 +36,7 @@ body .content a {
 }
 
 .header .app_name {
+  font-size: 18px;
   float: left;
   margin-left: 200px;
 }
@@ -35,7 +47,7 @@ body .content a {
 }
 
 ul.nav {
-  margin-left: 120px;
+  margin-left: 100px;
 }
 
 .reports_list {
@@ -93,12 +105,29 @@ ul.nav {
 
 .footer {
   margin: 0px;
-  margin-top: 200px;
+  height: 30px;
   background-color: #252525;
   padding: 0px;
   padding-top: 30px;
   padding-bottom: 40px;
   color: #fff;
+  font-family: Myriad Pro Regular;
+}
+
+html, body {
+  height: 100%;
+}
+.content {
+  min-height: 72%;
+  /* equal to footer height */
+  margin-bottom: -30px;
+}
+.content:after {
+  content: "";
+  display: block;
+}
+.footer, .content:after {
+  height: 30px;
 }
 
 .footer .copyright {
