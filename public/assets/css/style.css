@@ -1,7 +1,17 @@
 body {
   padding: 0px;
   margin: 0;
-  color: #222;
+  color: #333;
+}
+
+body .content {
+  width: 600px;
+  margin: 10px auto;
+}
+
+body .content a {
+  color: #111;
+  font-weight: bold;
 }
 
 .header {
@@ -22,6 +32,38 @@ body {
 .header .profile {
   float: right;
   padding-right: 200px;
+}
+
+.reports_list {
+  width: 600px;
+}
+
+.request_id {
+  margin-right: 300px;
+}
+
+.action_link {
+  margin: 0 10px;
+}
+
+.stats {
+  width: 600px;
+}
+
+.stats .short_stat {
+  width: 150px;
+  display: inline-block;
+  text-align: center;
+}
+
+
+.short_stat .stat_quant a {
+  color: #20ABFE;
+  font-size: 32px;
+}
+
+.short_stat .stat_desp {
+  font-size: 12px;
 }
 
 .footer {

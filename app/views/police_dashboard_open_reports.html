@@ -20,19 +20,23 @@
 
 {% block content %}
     <div class="sidebar">
-      <ul>
-        <li>Home</li>
-        <li><b>Requests</b></li>
-        <li>Ongoing</li>
-        <li>Closed</li>
+      <ul class="nav nav-pills">
+        <li role="presentation"><a href="#">Home</a></li>
+        <li role="presentation" class="active"><a href="#">Requests</a></li>
+        <li role="presentation"><a href="#">Ongoing</a></li>
+        <li role="presentation"><a href="#">Closed</a></li>
       </ul>
     </div>
     <div class="content">
-      {{ message }}<br><br>
-      <a href="/police/reports/open">{{ open_report_count }}</a> reports require attention<br><br>
-      Report ID
-      {% for report_id in open_reports %}
-        {{ report_id }}&nbsp;&nbsp;&nbsp;<a href="/police/reports/{{ report_id }}/process">Process</a><br>
-      {% endfor %}
+
+      <!-- <a href="/police/reports/open">{{ open_report_count }}</a> reports require attention<br><br> -->
+
+      <div class="reports_list">
+        <ul class="list-group">
+        {% for report_id in inprocess_reports %}
+          <li class="list-group-item"><span class="request_id">Request ID <a href="/police/reports/{{ report_id }}">#{{ report_id }}</a></span><span class="action_link"><a href="/police/reports/{{ report_id }}/process">Process</a></span><span class="action_link">Delete</span></li>
+        {% endfor %}
+        </ul>
+      </div>
     </div>
 {% endblock %}

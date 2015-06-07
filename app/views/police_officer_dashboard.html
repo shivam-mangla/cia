@@ -18,17 +18,28 @@
 
 {% block content %}
     <div class="sidebar">
-      <ul>
-        <li><b>Home</b></li>
-        <li>Requests</li>
-        <li>Ongoing</li>
-        <li>Closed</li>
+      <ul class="nav nav-pills">
+        <li role="presentation" class="active"><a href="#">Home</a></li>
+        <li role="presentation"><a href="#">Requests</a></li>
+        <li role="presentation"><a href="#">Ongoing</a></li>
+        <li role="presentation"><a href="#">Closed</a></li>
       </ul>
     </div>
     <div class="content">
-      {{ message }}<br><br>
-      <a href="/police/reports/open">{{ open_report_count }}</a> reports require attention<br><br>
-      <a href="/police/reports/in_process">{{ inprocess_report_count }}</a> reports are in process<br><br>
-      <a href="/police/reports/in_review">{{ inreview_report_count }}</a> reports are up for review
+      <!-- {{ message }}<br><br> -->
+      <div class="stats">
+        <div class="short_stat">
+          <div class="stat_quant"><a href="/police/reports/open">{{ open_report_count }}</a></div>
+          <div class="stat_desp">New Requests</div>
+        </div>
+        <div class="short_stat">
+          <div class="stat_quant"><a href="/police/reports/in_process">{{ inprocess_report_count }}</a></div>
+          <div class="stat_desp">Ongoing Requests</div>
+        </div>
+        <div class="short_stat">
+          <div class="stat_quant"><a href="/police/reports/in_review">{{ inreview_report_count }}</a></div>
+          <div class="stat_desp">Closed Requests</div>
+        </div>
+      </div>
     </div>
 {% endblock %}

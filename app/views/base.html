@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <title>{% block title %}{% endblock %}</title>
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
   {% endblock %}
 </head>
 <body>
@@ -17,8 +18,10 @@
       </span>
     </div>
   {% endblock %}
+  <div class="content">
   {% block content %}
   {% endblock %}
+  </div>
   {% block footer %}
     <div class="footer">
       <span class="copyright">Copyright - 2015 Crime Authentication using Aadhaar</span>
