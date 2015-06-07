@@ -5,47 +5,54 @@ namespace Models;
 use Models\Base;
 
 // Crime investigation reports sent by employees to their employers for checking
-class Forwarded_CIR extends Base
+class ForwardedCIR extends Base
 {
   protected $table = 'forwarded_cir';
 
-  protected $fillable = array('cf_id', 'cir_id', 'status', 'sent_at', 'rcvd_at', 'seen_at');
+  protected $fillable = array('report_id', 'status', 'receiver_id', 'seen_at', 'created_at', 'updated_at');
 
   protected $casts = array(
-    'cf_id' => 'integer',
-    'cir_id' => 'integer',
+    'id' => 'integer',
+    'report_id' => 'integer',
     'status' => 'string',
-    self::SENT_AT => 'integer',
-    self::RCVD_AT => 'integer',
-    self::SEEN_AT => 'integer'
+    'receiver_id' => 'integer',
+    'seen_at' => 'integer',
+    self::CREATED_AT => 'integer',
+    self::UPDATED_AT => 'integer'
     );
 
-  public static function getStatuses($cir_id)
+  public static function getMultipleStatusFor($cir_id)
   {
-    $instance = new static;
-
-    return $instance->findWhere(array('cir_id' => $cir_id));
-
-    $query = "SELECT `cf_id`, `status`, `rcvd_at`, `seen_at`, `report_id` 
+    $query = "SELECT `report_id`, `id`, `receiver_id`, `status`, `seen_at`, `updated_at`
               FROM `forwarded_cir`
-              WHERE `cir_id` = {$cir_id}";
+              WHERE `report_id` = {$cir_id}";
 
     // TODO: Get names of people by using this cir_id to get corresponding
     //       c_id of receiver and show their names
 
-    SELECT `username` FROM  
-
-    $forwarded_cir_statuses = array();
+    $multiple_status = array();
 
     if($statement = self::$db->prepare($query))
     {
       $statement->execute();
-      $statement->bind_result($forwarded_cir_statuses);
+      $statement->bind_result($report_id, $id, $receiver_id, $status, $seen_at, $updated_at);
       $statement->store_result();
-      $statement->fetch();
+
+      while($statement->fetch())
+      {
+        $multiple_status[] = array(
+          "id" => $id,
+          "report_id" => $report_id,
+          "receiver_id" => $receiver_id,
+          "status" => $status,
+          "seen_at" => $seen_at,
+          "updated_at" => $updated_at
+          );
+      }
+
       $statement->close();
 
-      return $forwarded_cir_statuses;
+      return $multiple_status;
     }
   }
 

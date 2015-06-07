@@ -5,7 +5,9 @@
     {{ parent() }}
     <style>
       .sidebar {
+        display: inline;
         width: 30%;
+        height: 100%;
         background-color: #888;
       }
 
@@ -19,15 +21,14 @@
 {% block content %}
     <div class="sidebar">
       <ul>
-        <li><b>Home</b></li>
+        <li>Home</li>
         <li>Requests</li>
         <li>Review</li>
-        <li>Closed</li>
+        <li><b>Closed</b></li>
       </ul>
     </div>
     <div class="content">
-      {{ message }}<br><br>
-      <a href="/police/requests">{{ open_report_count }}</a> new requests<br><br>
-      <a href="/police/reports/review">{{ review_report_count }}</a> reports to be reviewed
+      Report Number {{ report_id }} has been marked as verified. Hurraa! <br><br>
+      The person who asked for this review will be notified!
     </div>
 {% endblock %}

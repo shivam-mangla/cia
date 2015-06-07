@@ -7,6 +7,7 @@
   });
 
   Toro::serve(array(
+      "/" => "HomeController",
       "/police/login" => "PoliceLoginController",
       "/police/dashboard" => "PoliceDashboardController",
       "/police/requests" => "PoliceRequestsController",
@@ -17,6 +18,8 @@
       "/police/reports/:number" => "PoliceReviewReportController",
       "/police/reports/:number/process" => "PoliceProcessReportController",
       "/police/reports/:number/send_for_review" => "PoliceReportForReviewController",
-      "/citizen/login" => "PoliceLoginController",
+      "/police/reports/:number/mark_verified" => "PoliceReportVerificationController",
+      "/citizen/login" => "CitizenLoginController",
+      "/citizen/dashboard" => "CitizenDashboardController",
       "/citizen/status_fcir" => "ForwardedCIRStatusController"
     ));

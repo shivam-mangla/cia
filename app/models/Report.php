@@ -18,6 +18,31 @@ class Report extends Base
     self::UPDATED_AT => 'integer'
     );
 
+  public static function getReportIdsFor($aadhaar_no)
+  {
+    $query = "SELECT `id` FROM `reports` WHERE `aadhaar_no` = {$aadhaar_no}";
+
+    $report_id = NULL;
+
+    $report_ids = array();
+
+    if($statement = self::$db->prepare($query))
+    {
+      $statement->execute();
+      $statement->bind_result($report_id);
+      $statement->store_result();
+
+      while($statement->fetch())
+      {
+        $report_ids[] = $report_id;
+      }
+
+      $statement->close();
+
+      return $report_ids;
+    }
+  }
+
   public static function countWithStatusFor($status, $member)
   {
     $query = "SELECT count(*) FROM `reports`
@@ -126,6 +151,31 @@ class Report extends Base
 
       return $report_ids;
     }
+  }
+
+  public function markVerifiedBy($member_id)
+  {
+    $id = $this->getKey();
+    $timestamp = time();
+
+    $data = array(
+              "id" => $id,
+              "member_id" => $member_id,
+              "created_at" => $timestamp,
+              "updated_at" => $timestamp
+            );
+
+    $query = "INSERT INTO `report_verification_map`
+              (`report_id`, `verified_by`, `created_at`, `updated_at`)
+              VALUES (?, ?, ?, ?)";
+
+    $statement = self::$db->prepare($query);
+
+    $statement->bind_param("iiii", $id, $member_id, $timestamp, $timestamp);
+
+    $statement->execute();
+
+    return $statement->affected_rows === 1;
   }
 
 }
