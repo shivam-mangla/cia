@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Dashboard | Police{% endblock %}
+{% block title %}Report Assigned | Police{% endblock %}
 {% block head %}
     {{ parent() }}
     <style>
@@ -28,22 +28,14 @@
       </ul>
     </div>
     <div class="content">
-      <!-- <a href="/police/requests">{{ reports_requests_count }}</a>  new requests<br><br> -->
-
-      <div class="stats stats-1">
-        <div class="short_stat">
-          <div class="stat_quant"><a href="/police/requests">{{ reports_requests_count }}</a></div>
-          <div class="stat_desp">New Requests</div>
-        </div>
-      </div>
-
+      Report <a href="/police/reports/{{ report_id }}">#{{ report_id }}</a> has been assigned to: <br>
       <div class="reports_list">
         <ul class="list-group">
-        {% for report_id in reports_requests %}
-          <li class="list-group-item"><span class="request_id">Request ID <a href="/police/reports/{{ report_id }}">#{{ report_id }}</a></span><span class="action_link"><a href="/police/requests/{{ report_id }}">Assign</a></span><span class="action_link">Delete</span></li>
+        {% for username in usernames %}
+          <li class="list-group-item"><span class="request_id">Officer {{ username }}</span></li>
         {% endfor %}
         </ul>
       </div>
-
+      Officer(s) will be notified regarding the assignment!
     </div>
 {% endblock %}

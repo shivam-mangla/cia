@@ -29,7 +29,9 @@ class CitizenDashboardController
     }
     else if($citizen->role == "employer")
     {
-  		echo $twig->render("employer_dashboard.html", array("username" => $username));
+      $report_ids = $citizen->getReportIds();
+
+  		echo $twig->render("employer_dashboard.html", array("username" => $username, "report_ids" => $report_ids));
     }
   }
 

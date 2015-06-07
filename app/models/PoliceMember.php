@@ -49,4 +49,22 @@ class PoliceMember extends Base
     }
   }
 
+  public function assignReport($report_id)
+  {
+    $id = $this->getKey();
+    $timestamp = time();
+
+    $query = "INSERT INTO `report_police_member_map`
+              (`report_id`, `member_id`, `created_at`, `updated_at`)
+              VALUES (?, ?, ?, ?)";
+
+    $statement = self::$db->prepare($query);
+
+    $statement->bind_param("iiii", $report_id, $id, $timestamp, $timestamp);
+
+    $statement->execute();
+
+    return $statement->affected_rows === 1;
+  }
+
 }

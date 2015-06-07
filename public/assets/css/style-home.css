@@ -1,12 +1,41 @@
+@font-face {
+font-family: 'Myriad Pro Regular';
+font-style: normal;
+font-weight: normal;
+src: local('Myriad Pro Regular'), url('fonts/MYRIADPRO-REGULAR.woff') format('woff');
+}
+
+
 body {
   padding: 0px;
   margin: 0;
   color: #666;
+  background-image: url('/assets/img/hero1.jpg');
+  background-size: cover;
 }
 
 body .content {
-  width: 600px;
+  color: #fff;
+  width: 1200px;
   margin: 10px auto;
+}
+
+.main-content {
+  margin: 100px;
+}
+
+.main-content .title {
+  font-size: 45pt;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.main-content .subtitle {
+  font-size: 12pt;
+  font-family: Myriad Pro Regular;
+}
+
+.features {
+  background-color: #fff;
 }
 
 body .content a {
@@ -17,14 +46,16 @@ body .content a {
 .header {
   margin: 0px;
   margin-bottom: 20px;
-  background-color: #252525;
+  background-color: rgba(37,37,37, 0.5);
   padding: 0px;
-  padding-top: 30px;
-  padding-bottom: 40px;
+  padding-top: 20px;
+  padding-bottom: 35px;
   color: #fff;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .header .app_name {
+  font-size: 18px;
   float: left;
   margin-left: 200px;
 }
@@ -32,6 +63,10 @@ body .content a {
 .header .profile {
   float: right;
   padding-right: 200px;
+}
+
+.header .profile a {
+  margin-right: 20px;
 }
 
 ul.nav {
@@ -93,8 +128,8 @@ ul.nav {
 
 .footer {
   margin: 0px;
-  margin-top: 200px;
-  background-color: #252525;
+  margin-top: 0px;
+  background-color: rgba(0,0,0,0.8);
   padding: 0px;
   padding-top: 30px;
   padding-bottom: 40px;
@@ -118,4 +153,28 @@ ul.nav {
 a, a:hover {
   text-decoration: none;
   color: #fff;
+}
+
+.features {
+  background-color: #fff;
+  font-family: Myriad Pro Regular;
+  color: #333;
+  padding: 50px 30px 60px 200px;
+  margin-bottom: 0;
+}
+
+.a-feature {
+  text-align: center;
+  display: inline-block;
+  width: 300px;
+}
+
+.semtitle {
+  margin: 10px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.desc {
+  font-size: 12px;
 }

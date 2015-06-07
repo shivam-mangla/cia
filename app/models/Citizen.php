@@ -51,4 +51,34 @@ class Citizen extends Base
     }
   }
 
+  public function getReportIds()
+  {
+    $id = $this->getKey();
+
+    $query = "SELECT `report_id` FROM `forwarded_cir`
+              WHERE `receiver_id` = {$id}
+              AND `status` NOT IN ('accepted', 'rejected')";
+
+    $report_id = NULL;
+
+    $report_ids = array();
+
+    if($statement = self::$db->prepare($query))
+    {
+      $statement->execute();
+      $statement->bind_result($report_id);
+      $statement->store_result();
+
+      while($statement->fetch())
+      {
+        $report_ids[] = $report_id;
+      }
+
+      $statement->close();
+
+      return $report_ids;
+    }
+
+  }
+
 }

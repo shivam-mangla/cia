@@ -1,12 +1,13 @@
 {% extends "base.html" %}
 
-{% block title %}Dashboard | Citizen{% endblock %}
+{% block title %}Inbox | Citizen{% endblock %}
 {% block head %}
     {{ parent() }}
     <style>
       .sidebar {
         display: inline;
         width: 30%;
+        height: 100%;
         background-color: #888;
       }
 
@@ -20,18 +21,26 @@
 {% block content %}
     <div class="sidebar">
       <ul class="nav nav-pills">
-        <li role="presentation" class="active"><a href="/citizen/dashboard">Home</a></li>
+        <li role="presentation"><a href="/citizen/dashboard">Home</a></li>
         <li role="presentation"><a href="/citizen/reports">Inbox</a></li>
-        <li role="presentation"><a href="/citizen/ask_for_report">Ask for Report</a></li>
+        <li role="presentation"><a href="#">Ask for report</a></li>
       </ul>
     </div>
     <div class="content">
+
       <div class="stats stats-1">
         <div class="short_stat">
           <div class="stat_quant"><a href="/citizen/reports">{{ report_ids|length }}</a></div>
           <div class="stat_desp">Pending Reports</div>
         </div>
       </div>
-      <p style="text-align:center;">You are an employer, <b>{{ username }}</b>.</p>
+
+      <div class="reports_list">
+        <ul class="list-group">
+        {% for report_id in report_ids %}
+          <li class="list-group-item"><span class="request_id no-margin">Report ID <a href="/citizen/reports/{{ report_id }}">#{{ report_id }}</a></span><span class="report_status">status: <b>in_review</b> </span><span class="action_link"><a href="/citizen/reports/{{ report_id }}">Review</a></span><span class="action_link"><a href="#">Accept</a></span></li>
+        {% endfor %}
+        </ul>
+      </div>
     </div>
 {% endblock %}
