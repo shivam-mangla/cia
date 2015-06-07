@@ -22,7 +22,7 @@
     <div class="sidebar">
       <ul class="nav nav-pills">
         <li role="presentation"><a href="/citizen/dashboard">Home</a></li>
-        <li role="presentation" class="active"><a href="#">Forwarded</a></li>
+        <li role="presentation" class="active"><a href="/citizen/status_fcir">Forwarded</a></li>
         <li role="presentation"><a href="#">Received</a></li>
       </ul>
     </div>
@@ -36,13 +36,13 @@
           <li class="list-group-item">
           <span class="request_id">
             Request ID
-            <a href="/citizen/reports/{{ report_id }}">#{{ cir_status.report_id }}</a>
+            <a href="/citizen/reports/{{ cir_status.report_id }}">#{{ cir_status.report_id }}</a>
           </span>
           <!-- referring to the person to whom it was forwarded -->
-          to <span>{{cir_status.receiver}}</span>
-          <span>{{cir_status.status}}</span>
+          <span><a href="#">{{ cir_status.receiver }}</a></span>
+          <span><a href="#">{{ cir_status.status }}</a></span>
 
-          <span class="action_link">Delete</span>
+          <span class="action_link"><a href="#">Delete</a></span>
           </li>
         {% endfor %}
         </ul>
