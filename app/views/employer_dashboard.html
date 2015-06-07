@@ -5,6 +5,7 @@
     {{ parent() }}
     <style>
       .sidebar {
+        display: inline;
         width: 30%;
         background-color: #888;
       }
@@ -18,10 +19,10 @@
 
 {% block content %}
     <div class="sidebar">
-      <ul>
-        <li><b>Home</b></li>
-        <li><a href="/citizen/reports">Inbox</a></li>
-        <li><a href="/citizen/ask_for_report">Ask for Report</a></li>
+      <ul class="nav nav-pills">
+        <li role="presentation" class="active"><a href="/citizen/dashboard">Home</a></li>
+        <li role="presentation"><a href="/citizen/reports">Inbox</a></li>
+        <li role="presentation"><a href="/citizen/ask_for_report">Ask for Report</a></li>
       </ul>
     </div>
     <div class="content">
