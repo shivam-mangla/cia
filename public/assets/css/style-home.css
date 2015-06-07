@@ -55,6 +55,7 @@ body .content a {
 }
 
 .header .app_name {
+  font-size: 18px;
   float: left;
   margin-left: 200px;
 }
@@ -62,6 +63,10 @@ body .content a {
 .header .profile {
   float: right;
   padding-right: 200px;
+}
+
+.header .profile a {
+  margin-right: 20px;
 }
 
 ul.nav {
@@ -123,8 +128,8 @@ ul.nav {
 
 .footer {
   margin: 0px;
-  margin-top: 500px;
-  background-color: rgba(0,0,0,0);
+  margin-top: 0px;
+  background-color: rgba(0,0,0,0.8);
   padding: 0px;
   padding-top: 30px;
   padding-bottom: 40px;
@@ -148,4 +153,28 @@ ul.nav {
 a, a:hover {
   text-decoration: none;
   color: #fff;
+}
+
+.features {
+  background-color: #fff;
+  font-family: Myriad Pro Regular;
+  color: #333;
+  padding: 50px 30px 60px 200px;
+  margin-bottom: 0;
+}
+
+.a-feature {
+  text-align: center;
+  display: inline-block;
+  width: 300px;
+}
+
+.semtitle {
+  margin: 10px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.desc {
+  font-size: 12px;
 }

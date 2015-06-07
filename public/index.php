@@ -21,6 +21,7 @@
       "/police/reports/:number/mark_verified" => "PoliceReportVerificationController",
       "/police/requests/:number/assign" => "PoliceAssignRequestController",
       "/citizen/login" => "CitizenLoginController",
+      "/citizen/signup" => "CitizenSignUpController",
       "/citizen/dashboard" => "CitizenDashboardController",
       "/citizen/reports" => "CitizenReportsController",
       "/citizen/status_fcir" => "ForwardedCIRStatusController"
