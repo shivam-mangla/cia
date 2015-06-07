@@ -101,4 +101,31 @@ class Report extends Base
     }
   }
 
+  public static function findReportsAwaitingReviewForStation($station_id)
+  {
+    $query = "SELECT count(*) FROM `reports`
+              WHERE `station_id` = {$station_id}
+              AND `status` = 'in_review'";
+
+    $report_id = NULL;
+
+    $report_ids = array();
+
+    if($statement = self::$db->prepare($query))
+    {
+      $statement->execute();
+      $statement->bind_result($report_id);
+      $statement->store_result();
+
+      while($statement->fetch())
+      {
+        $report_ids[] = $report_id;
+      }
+
+      $statement->close();
+
+      return $report_ids;
+    }
+  }
+
 }
