@@ -1,0 +1,96 @@
+body {
+  padding: 0px;
+  margin: 0;
+  color: #333;
+}
+
+body .content {
+  width: 600px;
+  margin: 10px auto;
+}
+
+body .content a {
+  color: #111;
+  font-weight: bold;
+}
+
+.header {
+  margin: 0px;
+  margin-bottom: 20px;
+  background-color: #252525;
+  padding: 0px;
+  padding-top: 30px;
+  padding-bottom: 40px;
+  color: #fff;
+}
+
+.header .app_name {
+  float: left;
+  margin-left: 200px;
+}
+
+.header .profile {
+  float: right;
+  padding-right: 200px;
+}
+
+.reports_list {
+  width: 600px;
+}
+
+.request_id {
+  margin-right: 300px;
+}
+
+.action_link {
+  margin: 0 10px;
+}
+
+.stats {
+  width: 600px;
+}
+
+.stats .short_stat {
+  width: 150px;
+  display: inline-block;
+  text-align: center;
+}
+
+
+.short_stat .stat_quant a {
+  color: #20ABFE;
+  font-size: 32px;
+}
+
+.short_stat .stat_desp {
+  font-size: 12px;
+}
+
+.footer {
+  margin: 0px;
+  margin-top: 20px;
+  background-color: #252525;
+  padding: 0px;
+  padding-top: 30px;
+  padding-bottom: 40px;
+  color: #fff;
+}
+
+.footer .copyright {
+  float: left;
+  margin-left: 200px;
+}
+
+.footer .legal_links {
+  float: right;
+  margin-right: 200px;
+}
+
+.footer .legal_links a {
+  margin-right: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
