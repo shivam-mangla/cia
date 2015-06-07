@@ -1,6 +1,7 @@
 body {
   padding: 0px;
   margin: 0;
+  color: #222;
 }
 
 .header {
@@ -41,6 +42,10 @@ body {
 .footer .legal_links {
   float: right;
   margin-right: 200px;
+}
+
+.footer .legal_links a {
+  margin-right: 20px;
 }
 
 a {
