@@ -17,7 +17,14 @@ class CitizenSignUpController
 
 		//TODO: Validate input data
 		// Add input data to database
-		Citizen::insert($_POST);
+		$newuser = new Citizen;
+		$newuser->aadhaar_no = $_POST['aadhaar_no'];
+		$newuser->username = $_POST['username'];
+		$newuser->passwd = $_POST['passwd'];
+		$newuser->name = $_POST['name'];
+		$newuser->dob = $_POST['dob'];
+		$newuser->phone = $_POST['phone'];
+		$newuser->email = $_POST['email'];
 
 
 		// Aadhaar authentication
@@ -29,15 +36,13 @@ class CitizenSignUpController
 				'name' => array(
 					"matching-strategy"=> "exact",
 					'name-value' => $_POST['name']
-				),
-				'dob' => array(
-					'dob-value' => $_POST['dob']
-				),
-				'email' => $_POST['email'],
-				'phone' => $_POST['phone']
-			)
+				)
+			),
+			"location" => array(
+				"type"=> "pincode",
+				"pincode"=> "126102"
+			 )
 			);
-
 
 		// Create Http context details
 		$contextData = array (
@@ -54,8 +59,21 @@ class CitizenSignUpController
 		                  false,
 		                  $context);
 
-		var_dump($result);
+		// var_dump($result);
 
+		$result = json_decode($result);
+
+		if($result->success) {
+			$newuser->save();
+
+
+		$loader = new \Twig_Loader_Filesystem(__DIR__ . '/../views');
+  	$twig = new \Twig_Environment($loader);
+
+  	echo $twig->render("citizen_signup_success.html", array());
+		} else {
+			echo 'Not valid info for an aadhaar account!';
+		}
 	}
 
 }

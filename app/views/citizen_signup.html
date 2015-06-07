@@ -7,10 +7,10 @@
 
 {% block content %}
     <form action="/citizen/signup" method="POST">
-      <h2>Login</h2>
+      <h2>Sign up</h2>
+      Aadhaar no <input type="text" name="aadhaar_no" id="aadhaar_no" placeholder="121212121212"><br><br>
       Username <input type="text" name="username" id="username" placeholder="foo"><br><br>
-      Password <input type="password" name="passwd" id="passwd" placeholder="*******">
-
+      Password <input type="password" name="passwd" id="passwd" placeholder="*******"><br><br>
       Name <input type="text" name="name" id="name" placeholder="Foo Bar"><br><br>
       Date of Birth <input type="date" name="dob" id="dob" placeholder="00/00/1900"><br><br>
       Email <input type="text" name="email" id="email" placeholder="foo@bar.com"><br><br>

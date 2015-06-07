@@ -1,0 +1,1 @@
+ALTER TABLE `citizens` ADD `name` VARCHAR(50) NOT NULL AFTER `username`, ADD `dob` DATE NOT NULL AFTER `name`, ADD `email` VARCHAR(50) NOT NULL AFTER `dob`, ADD `phone` VARCHAR(15) NOT NULL AFTER `email`;

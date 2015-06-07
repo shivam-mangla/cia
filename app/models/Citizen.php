@@ -8,13 +8,17 @@ class Citizen extends Base
 {
   protected $table = 'citizens';
 
-  protected $fillable = array('aadhaar_no', 'username', 'passwd', 'role', 'org_name', 'created_at', 'updated_at');
+  protected $fillable = array('aadhaar_no', 'username', 'name', 'dob', 'email', 'phone', 'passwd', 'role', 'org_name', 'created_at', 'updated_at');
 
 
   protected $casts = array(
     'id' => 'integer',
     'aadhaar_no' => 'string',
     'username' => 'string',
+    'name' => 'string',
+    'dob' => 'string',
+    'email' => 'string',
+    'phone' => 'string',
     'passwd' => 'string',
     'role'  => 'string',
     'org_name' => 'string',
