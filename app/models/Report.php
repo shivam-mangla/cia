@@ -103,7 +103,7 @@ class Report extends Base
 
   public static function findReportsAwaitingReviewForStation($station_id)
   {
-    $query = "SELECT count(*) FROM `reports`
+    $query = "SELECT `id` FROM `reports`
               WHERE `station_id` = {$station_id}
               AND `status` = 'in_review'";
 

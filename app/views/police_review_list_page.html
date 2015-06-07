@@ -29,7 +29,7 @@
     </div>
     <div class="content">
       <a href="/police/reports/review">{{ report_ids|length }}</a> reports await review<br><br>
-      Report ID
+      Report ID<br>
       {% for report_id in report_ids %}
         {{ report_id }}&nbsp;&nbsp;&nbsp;<a href="/police/reports/{{ report_id }}">Review</a><br>
       {% endfor %}
