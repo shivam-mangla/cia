@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard | Police{% endblock %}
+{% block head %}
+    {{ parent() }}
+    <style>
+      .sidebar {
+        width: 30%;
+        background-color: #888;
+      }
+
+      li {
+        list-style: none;
+        display: inline-block;
+      }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div class="sidebar">
+      <ul>
+        <li><b>Home</b></li>
+        <li>Requests</li>
+        <li>Ongoing</li>
+        <li>Closed</li>
+      </ul>
+    </div>
+    <div class="content">
+      {{ message }}<br><br>
+      <a href="/police/reports/open">{{ open_report_count }}</a> new requests<br><br>
+      <a href="/police/reports/review">{{ review_report_count }}</a> reports to be reviewed
+    </div>
+{% endblock %}

@@ -64,7 +64,6 @@ class Report extends Base
         $report_ids[] = $report_id;
       }
 
-      $statement->fetch();
       $statement->close();
 
       return $report_ids;

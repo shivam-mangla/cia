@@ -1,0 +1,1 @@
+ALTER TABLE `reports` ADD `station_id` INT(10) NOT NULL AFTER `aadhaar_no`;
