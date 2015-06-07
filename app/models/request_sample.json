@@ -1,0 +1,15 @@
+{
+"aadhaar-id": "373846444703",
+"location": {
+"type": "pincode",
+"pincode": "126102"
+},
+"modality": "demo",
+"certificate-type": "preprod",
+"demographics": {
+"name": {
+"matching-strategy": "exact",
+"name-value": "Shivam Mangla"
+}
+}
+}
