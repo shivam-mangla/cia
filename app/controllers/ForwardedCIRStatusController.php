@@ -13,15 +13,14 @@ class ForwardedCIRStatusController
     $twig = new \Twig_Environment($loader);
 
     // TODO: get the user from the login cookies
-    // $username = $_COOKIE["username"];
+    $username = $_COOKIE["username"];
 
-		$citizen = Citizen::findByUsername("abhi");
+		$citizen = Citizen::findByUsername($username);
 
 		if(NULL === $citizen)
 		{
 			header('Location: /citizen/login?error_msg=login_required');
 		}
-
 
 		$cir_ids = Report::getReportIdsFor($citizen->aadhaar_no);
 

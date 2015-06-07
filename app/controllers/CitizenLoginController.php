@@ -10,11 +10,9 @@ class CitizenLoginController
 		$loader = new \Twig_Loader_Filesystem(__DIR__ . '/../views');
     	$twig = new \Twig_Environment($loader);
 
-		$citizen = PoliceMember::findByUsername('mangla');
+		$citizen = Citizen::findByUsername('abhi');
 
-		echo "Welcome Mr. " . $citizen->username;
-
-    	// echo $twig->render("police_login.html", array());
+    echo $twig->render("citizen_login.html", array());
 	}
 
 	function post()

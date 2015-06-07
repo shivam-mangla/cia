@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}Homepage | CIA{% endblock %}
+{% block head %}
+    {{ parent() }}
+{% endblock %}
+
+{% block content %}
+    <a href="/citizen/login">Citizen Login</a>
+    <a href="/police/login">Police Login</a>
+{% endblock %}
