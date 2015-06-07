@@ -128,4 +128,29 @@ class Report extends Base
     }
   }
 
+  public function markVerifiedBy($member_id)
+  {
+    $id = $this->getKey();
+    $timestamp = time();
+
+    $data = array(
+              "id" => $id,
+              "member_id" => $member_id,
+              "created_at" => $timestamp,
+              "updated_at" => $timestamp
+            );
+
+    $query = "INSERT INTO `report_verification_map`
+              (`report_id`, `verified_by`, `created_at`, `updated_at`)
+              VALUES (?, ?, ?, ?)";
+
+    $statement = self::$db->prepare($query);
+
+    $statement->bind_param("iiii", $id, $member_id, $timestamp, $timestamp);
+
+    $statement->execute();
+
+    return $statement->affected_rows === 1;
+  }
+
 }
