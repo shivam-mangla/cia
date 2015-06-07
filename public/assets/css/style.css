@@ -1,7 +1,7 @@
 body {
   padding: 0px;
   margin: 0;
-  color: #333;
+  color: #666;
 }
 
 body .content {
@@ -59,7 +59,7 @@ body .content a {
 
 
 .short_stat .stat_quant a {
-  color: #20ABFE;
+  color: #009cfc;
   font-size: 40px;
 }
 
