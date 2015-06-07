@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Login | Citizen{% endblock %}
+{% block head %}
+    {{ parent() }}
+{% endblock %}
+
+{% block content %}
+    <form action="/citizen/signup" method="POST">
+      <h2>Login</h2>
+      Username <input type="text" name="username" id="username" placeholder="foo"><br><br>
+      Password <input type="password" name="passwd" id="passwd" placeholder="*******">
+
+      Username <input type="text" name="name" id="name" placeholder="Foo Bar"><br><br>
+      Username <input type="date" name="dob" id="dob" placeholder="00/00/1900"><br><br>
+      Username <input type="text" name="email" id="email" placeholder="foo@bar.com"><br><br>
+      Username <input type="text" name="phone" id="phone" placeholder="0000000000"><br><br>
+      <input type="submit" value="Sign Up">
+    </form>
+{% endblock %}
