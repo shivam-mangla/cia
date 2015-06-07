@@ -25,7 +25,7 @@ body .content {
 }
 
 .main-content .title {
-  font-size: 45pt;
+  font-size: 40pt;
   font-family: 'Source Sans Pro', sans-serif;
 }
 
@@ -134,6 +134,7 @@ ul.nav {
   padding-top: 30px;
   padding-bottom: 40px;
   color: #fff;
+  font-family: Myriad Pro Regular;
 }
 
 .footer .copyright {
@@ -159,7 +160,7 @@ a, a:hover {
   background-color: #fff;
   font-family: Myriad Pro Regular;
   color: #333;
-  padding: 50px 30px 60px 200px;
+  padding: 50px 30px 75px 200px;
   margin-bottom: 0;
 }
 
