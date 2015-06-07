@@ -4,12 +4,29 @@
   {% block head %}
   <meta charset="UTF-8">
   <title>{% block title %}{% endblock %}</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
   {% endblock %}
 </head>
 <body>
+  {% block header %}
+    <div class="header">
+      <span class="app_name">CIA</span>
+      <span class="profile">
+        <a href="#" class="name">Parag Nandi</a>
+        <a href="#" class="pulldown">^</a>
+      </span>
+    </div>
+  {% endblock %}
   {% block content %}
   {% endblock %}
   {% block footer %}
+    <div class="footer">
+      <span class="copyright">Copyright - 2015 Crime Authentication using Aadhaar</span>
+      <span class="legal_links">
+        <a href="#">Terms of service</a>
+        <a href="#">Privacy Policy</a>
+      </span>
+    </div>
   {% endblock %}
 </body>
 </html>

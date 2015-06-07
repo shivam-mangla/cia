@@ -1,0 +1,49 @@
+body {
+  padding: 0px;
+  margin: 0;
+}
+
+.header {
+  margin: 0px;
+  margin-bottom: 20px;
+  background-color: #252525;
+  padding: 0px;
+  padding-top: 30px;
+  padding-bottom: 40px;
+  color: #fff;
+}
+
+.header .app_name {
+  float: left;
+  margin-left: 200px;
+}
+
+.header .profile {
+  float: right;
+  padding-right: 200px;
+}
+
+.footer {
+  margin: 0px;
+  margin-top: 20px;
+  background-color: #252525;
+  padding: 0px;
+  padding-top: 30px;
+  padding-bottom: 40px;
+  color: #fff;
+}
+
+.footer .copyright {
+  float: left;
+  margin-left: 200px;
+}
+
+.footer .legal_links {
+  float: right;
+  margin-right: 200px;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
