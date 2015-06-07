@@ -19,7 +19,9 @@
       "/police/reports/:number/process" => "PoliceProcessReportController",
       "/police/reports/:number/send_for_review" => "PoliceReportForReviewController",
       "/police/reports/:number/mark_verified" => "PoliceReportVerificationController",
+      "/police/requests/:number/assign" => "PoliceAssignRequestController",
       "/citizen/login" => "CitizenLoginController",
       "/citizen/dashboard" => "CitizenDashboardController",
+      "/citizen/reports" => "CitizenReportsController",
       "/citizen/status_fcir" => "ForwardedCIRStatusController"
     ));

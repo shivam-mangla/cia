@@ -28,7 +28,14 @@
       </ul>
     </div>
     <div class="content">
-      <a href="/police/reports/review">{{ report_ids|length }}</a> reports await review<br><br>
+
+      <div class="stats stats-1">
+        <div class="short_stat">
+          <div class="stat_quant"><a href="/police/reports/review">{{ report_ids|length }}</a></div>
+          <div class="stat_desp">Await Review</div>
+        </div>
+      </div>
+
       <div class="reports_list">
         <ul class="list-group">
         {% for report_id in report_ids %}

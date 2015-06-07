@@ -29,11 +29,16 @@
     </div>
     <div class="content">
 
-      <!-- <a href="/police/reports/open">{{ open_report_count }}</a> reports require attention<br><br> -->
+      <div class="stats stats-1">
+        <div class="short_stat">
+          <div class="stat_quant"><a href="/police/reports/open">{{ open_report_count }}</a></div>
+          <div class="stat_desp">New Requests</div>
+        </div>
+      </div>
 
       <div class="reports_list">
         <ul class="list-group">
-        {% for report_id in inprocess_reports %}
+        {% for report_id in open_reports %}
           <li class="list-group-item"><span class="request_id">Request ID <a href="/police/reports/{{ report_id }}">#{{ report_id }}</a></span><span class="action_link"><a href="/police/reports/{{ report_id }}/process">Process</a></span><span class="action_link">Delete</span></li>
         {% endfor %}
         </ul>
