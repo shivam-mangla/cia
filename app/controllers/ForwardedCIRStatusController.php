@@ -42,9 +42,9 @@ class ForwardedCIRStatusController
 		var_dump($all_cir_status);
 
 		// TODO: check status and show the relevant time stamp
-    /*echo $twig->render("forwarded_cir_status.html", array(
-    	"statuses" => $statuses_of_forwarded_reports
-    	));*/
+    echo $twig->render("forwarded_cir_status.html", array(
+    	"statuses" => $all_cir_status
+    	));
 	}
 
 }

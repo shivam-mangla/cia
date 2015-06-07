@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard | Citizen{% endblock %}
+{% block head %}
+    {{ parent() }}
+    <style>
+      .sidebar {
+        display: inline;
+        width: 30%;
+        height: 100%;
+        background-color: #888;
+      }
+
+      li {
+        list-style: none;
+        display: inline-block;
+      }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div class="sidebar">
+      <ul class="nav nav-pills">
+        <li role="presentation"><a href="#">Home</a></li>
+        <li role="presentation" class="active"><a href="#">Forwarded</a></li>
+        <li role="presentation"><a href="#">Received</a></li>
+      </ul>
+    </div>
+    <div class="content">
+
+      <!-- <a href="/police/reports/open">{{ open_report_count }}</a> reports require attention<br><br> -->
+
+      <div class="reports_list">
+        <ul class="list-group">
+        {% for cir_status in all_cir_statuses %}
+          <li class="list-group-item">
+          <span class="request_id">
+            Request ID 
+            <a href="/citizen/reports/{{ report_id }}">#{{ report_id }}</a>
+          </span>
+
+          <!-- referring to the person to whom it was forwarded -->
+          <span>#{{cir_status('receiver')}}</span>
+          <span>#{{cir_status('status')}}</span>
+
+          <span class="action_link">Delete</span>
+          </li>
+        {% endfor %}
+        </ul>
+      </div>
+    </div>
+
+    {% extends "base.html" %}
+{% endblock %}
