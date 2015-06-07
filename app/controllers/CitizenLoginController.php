@@ -10,7 +10,7 @@ class CitizenLoginController
 		$loader = new \Twig_Loader_Filesystem(__DIR__ . '/../views');
     	$twig = new \Twig_Environment($loader);
 
-		$citizen = PoliceMember::findByUsername('mangla');
+		$citizen = Citizen::findByUsername('mangla');
 
 		echo "Welcome Mr. " . $citizen->username;
 
