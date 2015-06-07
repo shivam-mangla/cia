@@ -23,4 +23,4 @@ CIA: Crime Investigation using Aadhaar
 8) Use the sequenced migrations in the folder `schema/migrations` to update the database
  (the once which starts with `1_` goes first then with `2_` and so on)
 
-9) Open `http://cia.local/police/login` on your browser
+9) Open `http://cia.local/` on your browser
