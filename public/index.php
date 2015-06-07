@@ -9,6 +9,7 @@
   Toro::serve(array(
       "/police/login" => "PoliceLoginController",
       "/police/dashboard" => "PoliceDashboardController",
+      "/police/requests" => "PoliceRequestsController",
       "/police/reports/open" => "PoliceOpenReportsController",
       "/police/reports/in_process" => "PoliceInprocessReportsController",
       "/police/reports/:number/process" => "PoliceProcessReportController",
