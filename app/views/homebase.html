@@ -14,44 +14,43 @@
     <div class="header">
       <span class="app_name">CIA</span>
       <span class="profile">
-        <a href="/citizen/login" class="login">Log in</a>
-        <a href="/citizen/signup" class="signup">Sign up</a>
-        <!-- <a href="#" class="pulldown">^</a> -->
+        <a href="/citizen/login" class="login">Citizen Log in</a>
+        <a href="/police/login" class="signup">Police Log in</a>
       </span>
     </div>
   {% endblock %}
   <div class="content">
   {% block content %}
     <div class="main-content">
-      <div class="title">Online Verification at Finger Tip</div>
+      <div class="title">Crime Verification at Finger Tip</div>
       <div class="subtitle">Instant access to Govt. of India's online</div>
-      <div class="subtitle">Identity Verification System</div>
+      <div class="subtitle">Criminal Record Verification System</div>
       <br>
-      <a href="/police/login"><img src="/assets/img/apply.png" alt="Apply"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <a href="/citizen/login"><img src="/assets/img/verify.png" alt="Verify"></a>
+      <a href="#apply_as_a_police_Not_implemented_yet"><img src="/assets/img/apply.png" alt="Apply for service"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="/citizen/signup"><img src="/assets/img/verify.png" alt="Verify"></a>
     </div>
   {% endblock %}
   </div>
   <div class="features">
     <div class="a-feature">
       <div class="semtitle">Aadhaar Authentication</div>
-      <div class="desc">Secure authentication right from the government</div>
+      <div class="desc">Trusted authentication based on Aadhaar information by the Government</div>
     </div>
     <div class="a-feature">
-      <div class="semtitle">Background Check</div>
-      <div class="desc">Trusted background check by the government</div>
+      <div class="semtitle">Criminal Background Check</div>
+      <div class="desc">Government certified online criminal background check</div>
     </div>
     <div class="a-feature">
       <div class="semtitle">Easy to use</div>
-      <div class="desc">Simple and elegant interface at your fingertips</div>
+      <div class="desc">Simple and elegant interface</div>
     </div>
   </div>
   {% block footer %}
     <div class="footer">
       <span class="copyright">Copyright - 2015 Crime Authentication using Aadhaar</span>
       <span class="legal_links">
-        <a href="#">Terms of service</a>
-        <a href="#">Privacy Policy</a>
+        <a href="#terms_of_service">Terms of service</a>
+        <a href="#privacy_policy">Privacy Policy</a>
       </span>
     </div>
   {% endblock %}
