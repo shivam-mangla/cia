@@ -18,12 +18,20 @@ body .content {
   color: #fff;
   width: 300px;
   margin: 10px auto;
+}
+
+.userfill {
+  margin-top: 100px;
+}
+
+.userfill.login {
   margin-top: 170px;
 }
 
 form h2 {
-  margin-left: 60px;
   font-family: Myriad Pro Regular;
+  font-size: 30px;
+  text-align: center;
 }
 
 .content input {
@@ -39,7 +47,7 @@ form h2 {
   width: 300px;
 }
 
-input.signin {
+input.action-btn {
   margin-top: 10px;
   color: #fff;
   background-color: #009cfc;

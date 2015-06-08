@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "citizen_base.html" %}
 
 {% block title %}Inbox | Citizen{% endblock %}
 {% block head %}
@@ -23,10 +23,10 @@
       <ul class="nav nav-pills">
         <li role="presentation"><a href="/citizen/dashboard">Home</a></li>
         <li role="presentation" class="active"><a href="/citizen/reports">Inbox</a></li>
-        <li role="presentation"><a href="#">Ask for report</a></li>
+        <li role="presentation"><a href="#ask_for_report_Not_yet_implemented">Ask for Report</a></li>
       </ul>
     </div>
-    <div class="content">
+    <div class="inner-content">
 
       <div class="stats stats-1">
         <div class="short_stat">
@@ -35,10 +35,11 @@
         </div>
       </div>
 
+      <p style="text-align:center">List of criminal reports you are reviewing:</p>
       <div class="reports_list">
         <ul class="list-group">
         {% for report_id in report_ids %}
-          <li class="list-group-item"><span class="request_id no-margin">Report ID <a href="/citizen/reports/{{ report_id }}">#{{ report_id }}</a></span><span class="report_status">status: <b>in_review</b> </span><span class="action_link"><a href="/citizen/reports/{{ report_id }}">Review</a></span><span class="action_link"><a href="#">Accept</a></span></li>
+          <li class="list-group-item"><span class="request_id no-margin">Report ID <a href="#/citizen/reports/{{ report_id }}">#{{ report_id }}</a></span><span class="report_status">status: <b>in_review</b> </span><span class="action_link"><a href="#/citizen/reports/{{ report_id }}">Review</a></span><span class="action_link"><a href="#accept_report_{{ report_id }}">Accept</a></span></li>
         {% endfor %}
         </ul>
       </div>

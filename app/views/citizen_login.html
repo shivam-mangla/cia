@@ -1,4 +1,4 @@
-{% extends "loginbase.html" %}
+{% extends "citizen_loginbase.html" %}
 
 {% block title %}Login | Citizen{% endblock %}
 {% block head %}
@@ -6,11 +6,12 @@
 {% endblock %}
 
 {% block content %}
-    <form action="/citizen/login" method="POST">
-      <h2>Welcome Back</h2>
+    <form action="/citizen/login" class="userfill login" method="POST">
+      <h2>Welcome Back Citizen</h2>
       <input type="text" name="username" id="username" placeholder="Username">
       <input type="password" name="passwd" id="passwd" placeholder="*******">
-      <input type="submit" class="signin" value="Sign in">
-      <p style="font-size: 12px">Demo User <br>username: <b>abhi</b>, password: <b>abhi</b></p>
+      <input type="submit" class="action-btn" value="Sign in">
+      <p style="font-size: 12px;text-align:center;"><strong>Demo employee</strong> <br>username: <b>abhi</b>, password: <b>abhi</b><br></p>
+      <p style="font-size: 12px;text-align:center;"><strong>Demo employer</strong> <br>username: <b>ollie</b>, password: <b>ollie</b><br></p>
     </form>
 {% endblock %}

@@ -1,16 +1,16 @@
-{% extends "loginbase.html" %}
+{% extends "police_loginbase.html" %}
 
-{% block title %}Login | Citizen{% endblock %}
+{% block title %}Login | Police{% endblock %}
 {% block head %}
     {{ parent() }}
 {% endblock %}
 
 {% block content %}
-    <form action="/police/login" method="POST">
-      <h2>Welcome Back</h2>
+    <form action="/police/login" class="userfill login" method="POST">
+      <h2>Welcome Back Officer</h2>
       <input type="text" name="username" id="username" placeholder="Username">
       <input type="password" name="passwd" id="passwd" placeholder="*******">
-      <input type="submit" class="signin" value="Sign in">
+      <input type="submit" class="action-btn" value="Sign in">
       <p style="font-size: 12px">Demo officer: <br><b>kandoiabhi</b>, password: <b>kandoiabhi</b></p>
       <p style="font-size: 12px">Demo commissioner: <br><b>headofpolice</b>, password: <b>headofpolice</b></p>
     </form>

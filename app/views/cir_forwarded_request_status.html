@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "citizen_base.html" %}
 
 {% block title %}Dashboard | Citizen{% endblock %}
 {% block head %}
@@ -22,8 +22,8 @@
     <div class="sidebar">
       <ul class="nav nav-pills">
         <li role="presentation"><a href="/citizen/dashboard">Home</a></li>
-        <li role="presentation" class="active"><a href="/citizen/status_fcir">Forwarded</a></li>
-        <li role="presentation"><a href="#">Received</a></li>
+        <li role="presentation" class="active"><a href="/citizen/status_fcir">Status</a></li>
+        <li role="presentation"><a href="#send_request_to_police-Not_implemented_yet">New Request</a></li>
       </ul>
     </div>
     <div class="content">
@@ -34,15 +34,16 @@
         <ul class="list-group">
         {% for cir_status in all_cir_status %}
           <li class="list-group-item">
-          <span class="request_id">
+          <span class="request_id no-margin">
             Request ID
             <a href="/citizen/reports/{{ cir_status.report_id }}">#{{ cir_status.report_id }}</a>
           </span>
-          <!-- referring to the person to whom it was forwarded -->
-          <span><a href="#">{{ cir_status.receiver }}</a></span>
-          <span><a href="#">{{ cir_status.status }}</a></span>
 
-          <span class="action_link"><a href="#">Delete</a></span>
+          <!-- referring to the person to whom it was forwarded -->
+          <span class="report_status">forwarded to: <a href="#see_profile">{{ cir_status.receiver }}</a></span>
+          <span>status: <a href="#view_status">{{ cir_status.status }}</a></span>
+
+          <!-- <span class="action_link"><a href="#">Delete</a></span> -->
           </li>
         {% endfor %}
         </ul>

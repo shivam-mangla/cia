@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% block head %}
+  <meta charset="UTF-8">
+  <title>{% block title %}{% endblock %}</title>
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <style>
+  ul.nav
+  {
+    margin: 20px auto;
+    width: 250px;
+  }
+  </style>
+  {% endblock %}
+</head>
+<body>
+  {% block header %}
+    <div class="header">
+      <span class="app_name">CIA</span>
+      <span class="profile">
+        <a href="/citizen/login" class="name">Logout</a>
+      </span>
+    </div>
+  {% endblock %}
+  <div class="content">
+  {% block content %}
+  {% endblock %}
+  </div>
+  {% block footer %}
+    <div class="footer">
+      <span class="copyright">Copyright - 2015 Crime Authentication using Aadhaar</span>
+      <span class="legal_links">
+        <a href="#">Terms of service</a>
+        <a href="#">Privacy Policy</a>
+      </span>
+    </div>
+  {% endblock %}
+</body>
+</html>

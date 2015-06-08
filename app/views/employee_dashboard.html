@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "citizen_base.html" %}
 
 {% block title %}Dashboard | Citizen{% endblock %}
 {% block head %}
@@ -22,10 +22,12 @@
       <ul class="nav nav-pills">
         <li role="presentation" class="active"><a href="/citizen/dashboard">Home</a></li>
         <li role="presentation"><a href="/citizen/status_fcir">Status</a></li>
-        <li role="presentation"><a href="#">New Request</a></li>
+        <li role="presentation"><a href="#send_request_to_police-Not_implemented_yet">New Request</a></li>
       </ul>
     </div>
     <div class="content">
-      You are an employee, {{ username }}.
+      You are an employee, <strong>{{ username }}</strong>.<br><br>
+      Use this portal to request for your criminal records.<br>
+      Forward these criminal records to those who ask for it (like your a company employer, landlord, govt. officials)
     </div>
 {% endblock %}
